@@ -1,0 +1,31 @@
+{
+  "name": "mern-server",
+  "version": "1.0.0",
+  "description": "MERN server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon src/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zendy199x/MERN-Stack.git"
+  },
+  "author": "Zendy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zendy199x/MERN-Stack/issues"
+  },
+  "homepage": "https://github.com/zendy199x/MERN-Stack#readme",
+  "dependencies": {
+    "argon2": "^0.28.2",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
