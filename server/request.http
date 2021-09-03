@@ -1,19 +1,64 @@
 # GET http://localhost:5000
 
+# Register
 POST http://localhost:5000/api/auth/register
 Content-Type: application/json
 
 {
-  "username": "zendy",
+  "username": "zendy1",
   "password": "zendy"
 }
 
 ###
 
+# Login
 POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
 {
-  "username": "zendy",
+  "username": "zendy1",
   "password": "zendy"
 }
+
+###
+
+# Create post
+POST http://localhost:5000/api/posts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTMyNGFiN2JkNTdiNmNlOWYwYmRjZTgiLCJpYXQiOjE2MzA2ODc0NTN9.riX9Ln4wwMOwF3CheCn4Rw3IsZscgt1SVyx8rqewjYE
+
+{
+  "title": "title 2",
+  "description": "description 2",
+  "url": "gooogle.com",
+  "status": "LEARNING"
+}
+
+###
+
+# Get post
+GET http://localhost:5000/api/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTMyNGFiN2JkNTdiNmNlOWYwYmRjZTgiLCJpYXQiOjE2MzA2ODc0NTN9.riX9Ln4wwMOwF3CheCn4Rw3IsZscgt1SVyx8rqewjYE
+
+
+###
+
+# Update post
+PUT http://localhost:5000/api/posts/61324ac8bd57b6ce9f0bdceb
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTMyNGFiN2JkNTdiNmNlOWYwYmRjZTgiLCJpYXQiOjE2MzA2ODc0NTN9.riX9Ln4wwMOwF3CheCn4Rw3IsZscgt1SVyx8rqewjYE
+
+{
+  "title": "Vue",
+  "description": "Learn Vue",
+  "url": "youtube.com",
+  "status": "LEARNING"
+}
+
+
+###
+
+# Delete post
+DELETE http://localhost:5000/api/posts/613252260ae41dd672f5ed36
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTMyNGFiN2JkNTdiNmNlOWYwYmRjZTgiLCJpYXQiOjE2MzA2ODc0NTN9.riX9Ln4wwMOwF3CheCn4Rw3IsZscgt1SVyx8rqewjYE
