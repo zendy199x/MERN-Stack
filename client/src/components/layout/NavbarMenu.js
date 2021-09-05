@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import learnItLogo from "../../assets/logo.svg";
 import logoutIcon from "../../assets/logout.svg";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const NavbarMenu = () => {
+  const {
+    authState: {
+      user: { username },
+    },
+    logoutUser
+  } = useContext(AuthContext);
+
+  const handleLogout = () => logoutUser();
+
   return (
     <Navbar expand="lg" bg="primary" variant="dark" className="shadow">
       <Navbar.Brand className="font-weight-bolder text-white">
@@ -20,7 +30,10 @@ const NavbarMenu = () => {
 
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-      <Navbar.Collapse id="basic-navbar-nav" className="d-flex justify-content-between">
+      <Navbar.Collapse
+        id="basic-navbar-nav"
+        className="d-flex justify-content-between"
+      >
         <Nav className="mr-auto">
           <Nav.Link
             className="font-weight-bolder text-white"
@@ -40,18 +53,16 @@ const NavbarMenu = () => {
 
         <Nav>
           <Nav.Link className="font-weight-bolder text-white pt-2" disabled>
-            Welcome, Zendy
+            Welcome, {username}
           </Nav.Link>
-          <Button
-            variant="secondary"
-            className="font-weight-bolder text-white"
-          >
+          <Button variant="secondary" className="font-weight-bolder text-white">
             <img
               src={logoutIcon}
               alt="logoutIcon"
               width="32"
               height="32"
               className="mr-2"
+              onClick={handleLogout}
             />
             Logout
           </Button>
