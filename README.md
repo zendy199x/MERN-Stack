@@ -8,7 +8,7 @@
 - Skype: nhokkute.nguyenduc
 - Zalo: [Zendy](https://zalo.me/nguyenduc94/)
 
-### Setup
+### Setup ###
 
 **Server**
 ```bash
